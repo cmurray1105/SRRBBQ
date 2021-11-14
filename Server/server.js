@@ -8,12 +8,7 @@ const url = require("url");
 const AWS = require("aws-sdk");
 const env = require("./env");
 
-// SQL_HOST: 'localhost'
-// SQL_USER: 'root'
-// SQL_PASSWORD: 'Bruins2011!'
-// SQL_DATABASE: 'barbecue'
-// let env = {BUCKET: 'scallywagsmoker', ACCESS_KEY: 'AKIARCN66JVQZ5ENSFMM', SECRET:'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'}
-// console.log("ENV AND STUFF", env.BUCKET, env.ACCESS_KEY, env.SECRET, env.SQL_HOST, env.SQL_USER, env.SQL_PASSWORD, env.SQL_DATABASE)
+
 const s3 = new AWS.S3({
   accessKeyId: env.ACCESS_KEY,
   secretAccessKey: env.SECRET,

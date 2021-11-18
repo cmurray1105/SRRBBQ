@@ -69,6 +69,9 @@ const useRowStyles = makeStyles({
 
 function InventoryRow(props) {
   const [hovered, setHovered] = React.useState(false)
+  const [updated, setUpdated] = React.useState(false)
+  // const [rowQuantity, setRowQuantity] = React.useState(row.Quantity)
+  // const [rowProductName, setRowProductName] = React.useState(row.product_name)
   const row = props.row
   console.log("ROW", row)
   const classes = useRowStyles();
@@ -80,11 +83,17 @@ function InventoryRow(props) {
     }
     ))
   }
+  const addQuantity = (quantity, item) =>{
+    // let quantity = [req.body.quantity.toString(), req.body.product_name];
+      axios.post('/updateQuantity', {quantity: quantity, productName: item})
+      props.getInventory()
+
+  }
   return (
 <>
 <TableRow className={classes.root}>
 <TableCell align="right" component="th" scope="row">{row.product_name}</TableCell>
-<TableCell align="right"><div className={classes.quantityCell}><button className={classes.cellItem}>-</button><span className={classes.cellItem}>{row.quantity}</span><button className={classes.cellItem}>+</button> </div></TableCell>
+<TableCell align="right"><div className={classes.quantityCell}><button className={classes.cellItem} onClick={(event)=>{addQuantity(row.quantity - 1, row.product_name)}}>-</button><span className={classes.cellItem}>{row.quantity}</span><button onClick={()=>{addQuantity(row.quantity + 1, row.product_name)}} className={classes.cellItem}>+</button> </div></TableCell>
 <TableCell align="right">${props.convertPriceToString(row.price)}
 
 </TableCell>

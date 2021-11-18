@@ -2,8 +2,8 @@
 const path = require('path')
 // require('dotenv').config()
 const mysql = require('mysql');
-let SQL_HOST = 'localhost'
-let SQL_USER = 'root'
+let SQL_HOST = '34.224.51.34'
+let SQL_USER = 'barbecue'
 let DB_PASSWORD = 'Bruins2011!'
 let SQL_DATABASE = 'barbecue'
 const connection = mysql.createConnection({

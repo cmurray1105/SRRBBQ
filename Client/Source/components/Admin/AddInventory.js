@@ -258,8 +258,8 @@ console.log("CATS ARE CUTE", categories)
         console.log("CATS IN THE PULLDOWN", props.categories)
         let categoryList = []
         for (let i = 0; i < props.categories.length; i++){
-console.log("CAT ITEM", props.categories[i].name)
-          categoryList.push( <option value={props.categories[i].name}>{props.categories[i].name}</option>)
+console.log("CAT ITEM", props.categories[i].category)
+          categoryList.push( <option value={props.categories[i].category}>{props.categories[i].category}</option>)
         }
         return categoryList
       }

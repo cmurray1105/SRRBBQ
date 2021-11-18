@@ -1,6 +1,6 @@
 const path = require('path');
 const src_dir = path.join(__dirname, './Client/Source');
-const dist_dir = path.join(__dirname, '/Client/Dist');
+const dist_dir = path.join(__dirname, './Client/Dist');
 
 module.exports = {
   entry: [`${src_dir}/index.js`],
